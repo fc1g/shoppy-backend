@@ -2,6 +2,7 @@ import { Module, ValidationPipe } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { APP_PIPE } from '@nestjs/core';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { UsersModule } from './module/users/users.module';
 
 @Module({
   imports: [
@@ -49,6 +50,7 @@ import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
         throw new Error('Invalid NODE_ENV value');
       },
     }),
+    UsersModule,
   ],
   controllers: [],
   providers: [
